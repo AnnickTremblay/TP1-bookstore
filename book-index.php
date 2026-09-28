@@ -2,9 +2,9 @@
 require_once('classes/Book.php');
 
 // Crée l'objet Book qui ouvre la connexion à la base de données.
-$book = new Book;
+$bookObj = new Book;
 // Récupère tous les livres avec le nom de leur auteur.
-$books = $book->selectWithAuthor();
+$books = $bookObj->selectWithAuthor();
 ?>
 
 <!DOCTYPE html>

@@ -2,9 +2,9 @@
 require_once('classes/Sale.php');
 
 // Crée l'objet Sale qui ouvre la connexion à la base de données.
-$sale = new Sale;
+$saleObj = new Sale;
 // Récupère toutes les ventes avec le nom du client et le titre du livre.
-$sales = $sale->selectWithDetails();
+$sales = $saleObj->selectWithDetails();
 ?>
 
 <!DOCTYPE html>

@@ -29,7 +29,7 @@ if(isset($_GET['author_id'])) {
                 <input type="text" name="title" required>
             </label>
             <label>Isbn
-                <input type="text" name="isbn" required>
+                <input type="text" name="isbn" pattern="[0-9]{13}" maxlength="13" title="13 chiffres sans tirets" required>
             </label>
             <label>Description
                 <textarea name="description"></textarea>

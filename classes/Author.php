@@ -28,12 +28,12 @@ class Author extends CRUD {
         return $stmt->fetchAll();
     }
 
-        // Retourne tous les livres écrits par un auteur.
-        public function selectBooks(int $authorId):array {
-            $sql = "SELECT * FROM book WHERE author_id = :author_id ORDER BY title ASC";
-            $stmt = $this->prepare($sql);
-            $stmt->bindValue(':author_id', $authorId);
-            $stmt->execute();
-            return $stmt->fetchAll();
-        }
+    // Retourne tous les livres écrits par un auteur.
+    public function selectBooks(int $authorId):array {
+        $sql = "SELECT * FROM book WHERE author_id = :author_id ORDER BY title ASC";
+        $stmt = $this->prepare($sql);
+        $stmt->bindValue(':author_id', $authorId);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }

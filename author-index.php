@@ -2,9 +2,9 @@
 require_once('classes/Author.php');
 
 // Crée l'objet Author qui ouvre la connexion à la base de données.
-$author = new Author;
+$authorObj = new Author;
 // Récupère tous les auteurs avec le nombre de livres qu'ils ont écrits.
-$authors = $author->selectWithBookCount();
+$authors = $authorObj->selectWithBookCount();
 ?>
 
 <!DOCTYPE html>

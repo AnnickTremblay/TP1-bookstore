@@ -1,5 +1,5 @@
 <?php
-// Si le formulaire n'a pas été envoyé, l'accès direct à la page sera bloquée.
+// Si le formulaire n'a pas été envoyé, l'accès direct à la page sera bloqué.
 if($_SERVER['REQUEST_METHOD'] != 'POST') {
     header('location:author-index.php');
 }

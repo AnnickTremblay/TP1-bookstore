@@ -2,9 +2,9 @@
 require_once('classes/Client.php');
 
 // Crée l'objet Client qui ouvre la connexion à la base de données.
-$client = new Client;
+$clientObj = new Client;
 // Récupère tous les clients avec le nombre de ventes.
-$clients = $client->selectWithSaleCount();
+$clients = $clientObj->selectWithSaleCount();
 ?>
 
 <!DOCTYPE html>

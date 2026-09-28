@@ -9,12 +9,12 @@ $id = $_GET['id'];
 
 require_once('classes/Author.php');
 
-$author = new Author;
+$authorObj = new Author;
 
 // Récupère l'enregistrement
-$authorData = $author->selectId('author', $id);
+$authorData = $authorObj->selectId('author', $id);
 // Récupère les livres de cet auteur
-$books = $author->selectBooks($id);
+$books = $authorObj->selectBooks($id);
 
 if($authorData) {
     // extract() transforme les clés du tableau en variables ($id, $name, $birthday)
@@ -56,7 +56,7 @@ if($authorData) {
                     <tr>
                         <td><a href="book-show.php?id=<?= $book['id'] ?>"><?= $book['title'] ?></a></td>
                         <td><?= $book['isbn'] ?></td>
-                        <td><?= $book['price'] ?></td>
+                        <td><?= $book['price'] ?> $</td>
                     </tr>
                 <?php
                 }

@@ -7,6 +7,7 @@ if($_SERVER['REQUEST_METHOD'] != 'POST') {
 require_once('classes/CRUD.php');
 
 $crud = new CRUD;
+// Pas besoin de transformer $_POST, insert() attend exactement ce format
 // Les name du formulaire deviennent les clés du tableau $_POST
 $insert = $crud->insert('book', $_POST);
 

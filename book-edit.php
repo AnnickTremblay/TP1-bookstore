@@ -40,22 +40,24 @@ if($book) {
             <!-- Champ caché : l'id sert au WHERE de la requête UPDATE -->
             <input type="hidden" name="id" value="<?= $id; ?>">
             <label>Title
-                <input type="text" name="title" value="<?= $title; ?>">
+                <input type="text" name="title" value="<?= $title; ?>" required>
             </label>
             <label>Isbn
-                <input type="text" name="isbn" value="<?= $isbn; ?>">
+                <input type="text" name="isbn" value="<?= $isbn; ?>" pattern="[0-9]{13}" maxlength="13" title="13 chiffres sans tirets" required>
             </label>
             <label>Description
                 <textarea name="description"><?= $description; ?></textarea>
             </label>
             <label>Price
-                <input type="number" step="0.01" name="price" value="<?= $price; ?>">
+                <input type="number" step="0.01" name="price" value="<?= $price; ?>" required>
             </label>
             <label>Author
                 <select name="author_id">
                     <?php foreach($authors as $author) {
                     ?>
-                        <option value="<?= $author['id'] ?>" <?= $author['id'] == $author_id ? 'selected' : '' ?>><?= $author['name'] ?></option>
+                        <option value="<?= $author['id'] ?>"
+                            <?php if($author['id'] == $author_id) { echo 'selected'; } ?>
+                        ><?= $author['name'] ?></option>
                     <?php
                     }
                     ?>
